@@ -1,5 +1,5 @@
 **_Continue watching:_**
-https://laracasts.com/series/neovim-as-a-php-ide/episodes/10
+https://laracasts.com/series/neovim-as-a-php-ide/episodes/19
 
 **_NERD Fonts to download_**:
 https://www.nerdfonts.com/font-downloads
