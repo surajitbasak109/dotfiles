@@ -281,6 +281,7 @@ use({
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     'onsails/lspkind-nvim',
+    'rafamadriz/friendly-snippets',
   },
   config = function()
     require('user.plugins.cmp')
@@ -293,6 +294,26 @@ use({
   config = function()
     require('lsp-format').setup()
   end
+})
+
+-- PHP Refactoring Tools
+use({
+  'phpactor/phpactor',
+  ft = 'php',
+  run = 'composer install --no-dev --optimize-autoloader',
+  config = function()
+    vim.keymap.set('n', '<Leader>pm', ':PhpactorContextMenu<CR>')
+    vim.keymap.set('n', '<Leader>pn', ':PhpactorClassNew<CR>')
+  end,
+})
+
+-- Project Configuration.
+use({
+  'tpope/vim-projectionist',
+  requires = 'tpope/vim-dispatch',
+  config = function()
+    require('user.plugins.projectionist')
+  end,
 })
 
 -- Automatically set up your configuration after cloning packer.nvim
