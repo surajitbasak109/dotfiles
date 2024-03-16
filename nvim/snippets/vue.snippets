@@ -1,0 +1,86 @@
+snippet vbase "Base Vue Component" b
+  <template>
+    <div>
+      $1
+    </div>
+  </template>
+
+  <script>
+  import { defineComponent } from 'vue';
+  export default defineComponent({
+    name: '$2',
+    data() {
+      return {
+        $3
+      }
+    },
+    methods: {
+      $4
+    },
+    computed: {
+      $5
+    },
+    created() {
+      $6
+    },
+    mounted() {
+      $7
+    }
+  });
+  </script>
+
+  <style scoped>
+  $8
+  </style>
+
+snippet vdata "Vue Data Property" b
+  $3() {
+    return {
+      $4
+    }
+  },
+
+snippet vmethod "Vue Method" b
+  $5() {
+    $6
+  },
+
+snippet vcomputed "Vue Computed Property" b
+  $7() {
+    return $8;
+  },
+
+snippet vcreated "Vue Created Hook" b
+  created() {
+    $6
+  },
+
+snippet vmounted "Vue Mounted Hook" b
+  mounted() {
+    $6
+  },
+
+snippet vwatch "Vue Watcher" b
+  watch: {
+    '$3': function (newVal, oldVal) {
+      $4
+    }
+  },
+
+snippet vif "Vue Conditional Render" b
+  <template v-if="$3">
+    $4
+  </template>
+
+snippet velse "Vue Else Render" b
+  <template v-else>
+    $3
+  </template>
+
+snippet vfor "Vue Loop" b
+  <template v-for="$3 in $4" :key="$3.id">
+    $5
+  </template>
+
+snippet vimport "Vue Component Import" i
+  import $2 from '$1';

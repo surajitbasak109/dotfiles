@@ -1,3 +1,12 @@
-require('user/plugins')
-require('user/options')
-require('user/keymaps')
+--
+--                            ⢸⣦⡈⠻⣿⣿⣿⣶⣄
+--                            ⢸⣿⣿⣦⡈⠻⣿⣿⣿⣷⣄
+--                      ⣀⣀⣀⣀⣀⣀⣼⣿⣿⣿⣿ ⠈⠻⣿⣿⣿⣷⣄
+--                      ⠈⠻⣿⣿⣿⣿⣿⡿⠿⠛⠁   ⠈⠻⢿⣿⣿⣷⣄
+--
+-- Personal Neovim configuration of Surajit Basak <surajitbasak109@gmail.com>
+
+require('user.options')
+require('user.keymaps')
+require('user.misc')
+require('user.plugins')

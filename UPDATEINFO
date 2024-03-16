@@ -1,0 +1,10 @@
+Playing Melodies
+In Normal mode, we compose commands by typing one or more keystrokes
+in sequence. These commands appear as follows:
+NotationMeaning
+xPress x once
+dwIn sequence, press d , then w
+dapIn sequence, press d , a , then p
+Most of these sequences involve two or three keystrokes, but some are longer.
+Deciphering the meaning of Vim’s Normal mode command sequences can be
+challenging, but you’ll get better at it with practice.
