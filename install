@@ -38,6 +38,18 @@ ln -s $DOTFILES/phpactor $HOME/.config/phpactor
 mkdir -p $HOME/.nvm
 ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
 
+# LazyGit
+rm -rf $HOME/.config/lazygit
+ln -s $DOTFILES/lazygit $HOME/.config/lazygit
+
+# Qutebrowser
+rm -rf $HOME/.config/qutebrowser
+ln -s $DOTFILES/qutebrowser $HOME/.config/qutebrowser
+
+# Ranger
+rm -rf $HOME/.config/ranger
+ln -s $DOTFILES/ranger $HOME/.config/ranger
+
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

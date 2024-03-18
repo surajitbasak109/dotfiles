@@ -60,7 +60,9 @@
     excludesfile = ~/.gitignore_global
     pager = delta
 [diff]
-    tool = vimdiff
+	tool = meld
+[difftool]
+	prompt = false
 [fetch]
     prune = true
 [help]
@@ -73,6 +75,7 @@
     enabled = true
 [merge]
     conflictstyle = diff3
+	tool = meld
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -89,3 +92,9 @@
 [user]
 	email = surajitb@packt.com
 	name = Surajit Basak
+[difftool "meld"]
+	path = /usr/bin/meld
+[mergetool "meld"]
+	path = /usr/bin/meld
+[mergetool]
+	prompt = false

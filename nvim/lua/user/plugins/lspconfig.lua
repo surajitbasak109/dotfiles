@@ -80,6 +80,8 @@ return {
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
     })
 
+    require('lspconfig').cssls.setup({ capabilities = capabilities });
+
     -- Tailwind CSS
     require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 
