@@ -5,6 +5,7 @@ return {
     require('nvim-treesitter.install').update({ with_sync = true })
   end,
   dependencies = {
+    { 'windwp/nvim-ts-autotag' },
     { 'nvim-treesitter/playground', cmd = "TSPlaygroundToggle" },
     {
       'JoosepAlviste/nvim-ts-context-commentstring',
@@ -67,6 +68,10 @@ return {
     },
     rainbow = {
       enable = true,
+    },
+    autotag = {
+      enable = true,
+      filetypes = { "html" , "xml", "vue", "tsx", "jsx", "blade", "php" },
     },
     textobjects = {
       select = {

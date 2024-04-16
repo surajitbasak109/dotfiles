@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Function to convert PNG images to WebP format
+convert_to_webp() {
+    local file="$1"
+    local filename="${file%.*}"
+    local webp_file="$filename.webp"
+
+    # Check if the file is a PNG image
+    if [[ "${file##*.}" == "png" ]]; then
+        # Convert PNG to WebP using ImageMagick
+        convert "$file" "$webp_file"
+        echo "Converted $file to $webp_file"
+        # Optionally, you can remove the original PNG file
+        # rm "$file"
+    fi
+}
+
+# Function to process directories recursively
+process_directory() {
+    local dir="$1"
+    local files="$(find "$dir" -type f)"
+
+    # Loop through each file in the directory
+    for file in $files; do
+        # Check if it's a directory
+        if [[ -d "$file" ]]; then
+            # Recursively process subdirectories
+            process_directory "$file"
+        else
+            # Convert PNG images to WebP format
+            convert_to_webp "$file"
+        fi
+    done
+}
+
+# Start processing from the current directory
+process_directory "$(pwd)"

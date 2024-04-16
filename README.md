@@ -31,3 +31,29 @@ plugins (
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 plugins=( [plugins...] zsh-syntax-highlighting)
 ```
+
+## Some fixes and techniques
+
+**I cannot run flameshot, it is saying cannot take screenshot**
+
+In Ubuntu press the window key search for keyboard shortcuts
+
+Click - **View and Customize shortcuts** - **Custom Shortcuts**
+
+Click `+` icon
+
+**Name**: Flameshot screenshot
+
+**Command**:
+
+```bash
+script --command "flameshot gui" /dev/null
+```
+
+**Shortcut**: Use your own shortcut e.g. `Ctrl` + `Alt` + `x`
+
+**Useful telescope extensions**:
+https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions
+
+**To integrate LSP completion with emmet**:
+https://github.com/pedro757/emmet

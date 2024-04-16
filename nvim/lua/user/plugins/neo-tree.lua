@@ -1,9 +1,6 @@
 return {
   'nvim-neo-tree/neo-tree.nvim',
   cmd = 'Neotree',
-  keys = {
-    { '<leader>n', ':Neotree reveal toggle<CR>' },
-  },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -73,10 +70,11 @@ return {
           ".git",
         },
       },
-      -- follow_current_file = {
-      --   enabled = true,
-      -- },
-      group_empty_dirs = false
+      follow_current_file = {
+        enabled = true,
+      },
+      group_empty_dirs = false,
+      hijack_netrw_behavior = "open_current",
     },
   },
 }

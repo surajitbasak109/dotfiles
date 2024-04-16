@@ -35,6 +35,9 @@ return {
         ['database/migrations/*.php'] = {
           type = 'migration',
         },
+        ['resources/inertia/*.vue'] = {
+          type = 'inertia'
+        },
       },
       ['src/&composer.json'] = {
         ['src/*.php'] = {

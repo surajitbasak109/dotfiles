@@ -1,0 +1,22 @@
+snippet exd "Export Default Dynamic" b
+  export default `expand('%:t:r')`;
+
+snippet rfc "React functional component" b
+  const ${1:`expand('%:t:r')`} = ($2) => {
+    return (
+      $3
+    );
+  }
+
+  export default  `expand('%:t:r')`;
+
+snippet rfcp "React functional component with props" b
+  type props = {
+    $1
+  }
+
+  const ${2:`expand('%:t:r')`} = ({$3}: props) => {
+    $4
+  }
+
+  export default ${5:`expand('%:t:r')`};

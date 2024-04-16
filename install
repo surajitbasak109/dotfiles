@@ -23,6 +23,9 @@ mkdir -p $HOME/.local/bin
 rm -rf $HOME/.local/bin/t
 ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
 
+rm -rf $HOME/.local/bin/convert_webp
+ln -s $DOTFILES/scripts/convert_webp $HOME/.local/bin/convert_webp
+
 rm -rf $HOME/.local/bin/login.sh
 ln -s $DOTFILES/scripts/login.sh $HOME/.local/bin/login.sh
 

@@ -2,12 +2,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Quickly clear search highlighting.
-vim.keymap.set('n', '<leader>k', ':nohlsearch<CR>')
-
--- Close all open buffers.
-vim.keymap.set('n', '<leader>Q', ':bufdo bdelete<CR>')
-
 -- Allow gf to open non-existent files.
 vim.keymap.set('', 'gf', ':edit <cfile><CR>')
 
@@ -31,9 +25,6 @@ vim.keymap.set('v', 'p', '"_dP')
 vim.keymap.set('i', ';;', '<Esc>A;<Esc>')
 vim.keymap.set('i', ',,', '<Esc>A,<Esc>')
 
--- Open the current file in the default program (on Mac this should just be just `open`).
-vim.keymap.set('n', '<leader>x', ':!xdg-open %<cr><cr>')
-
 -- Disable annoying command line thing.
 vim.keymap.set('n', 'q:', ':q<CR>')
 
@@ -51,5 +42,5 @@ vim.keymap.set('n', '<A-k>', ':move .-2<CR>==')
 vim.keymap.set('v', '<A-j>', ":move '>+1<CR>gv=gv")
 vim.keymap.set('v', '<A-k>', ":move '<-2<CR>gv=gv")
 
--- Set jk to go normal mode from insert mode
-vim.keymap.set('i', 'jk', '<Esc>')
+vim.cmd[[cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%']]
+

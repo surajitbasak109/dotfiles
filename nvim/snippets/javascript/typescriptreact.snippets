@@ -1,0 +1,8 @@
+snippet expd "Export Default Dynamic" b
+  export default ${1:`vim_snippets#Filename("$1.h")`};
+
+snippet exd "Export Default Dynamic" b
+  export default `vim.fn.expand('%:t'):gsub("%.tsx$", "")`;
+
+snippet hello "Example Hello" b
+  "say hello to the world"

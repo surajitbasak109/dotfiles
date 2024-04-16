@@ -26,7 +26,7 @@ require("lazy").setup({
   { 'tpope/vim-eunuch' },
 
   -- Pairs of handy bracket mappings, like [b and ]b.
-  { 'tpope/vim-unimpaired', event = 'VeryLazy' },
+  { 'tpope/vim-unimpaired',                  event = 'VeryLazy' },
 
   -- Indent autodetection with editorconfig support.
   { 'tpope/vim-sleuth' },
@@ -47,16 +47,16 @@ require("lazy").setup({
   { 'jessarcher/vim-heritage' },
 
   -- Text objects for HTML attributes.
-  { 'whatyouhide/vim-textobj-xmlattr', dependencies = 'kana/vim-textobj-user'  },
+  { 'whatyouhide/vim-textobj-xmlattr',       dependencies = 'kana/vim-textobj-user' },
 
   -- Automatically set the working directory to the project root.
   { import = 'user.plugins.vim-rooter' },
 
   -- Automatically add closing brackets, quotes, etc.
-  { 'windwp/nvim-autopairs', config = true },
+  { 'windwp/nvim-autopairs',                 config = true },
 
   -- Add smooth scrolling to avoid jarring jumps
-  { 'karb94/neoscroll.nvim', config = true },
+  { 'karb94/neoscroll.nvim',                 config = true },
 
   -- All closing buffers without closing the split window.
   { import = 'user.plugins.bufdelete' },
@@ -99,7 +99,7 @@ require("lazy").setup({
   { import = 'user.plugins.gitsigns' },
 
   -- Git commands.
-  { 'tpope/vim-fugitive', dependencies = 'tpope/vim-rhubarb' },
+  { 'tpope/vim-fugitive',                    dependencies = 'tpope/vim-rhubarb' },
 
   --- Floating terminal.
   { import = 'user.plugins.floaterm' },
@@ -136,6 +136,26 @@ require("lazy").setup({
 
   -- Highlight occurrences of the word under the cursor.
   { import = 'user.plugins.illuminate' },
+
+  -- displays a popup with possible key bindings of the command you started typing
+  { import = 'user.plugins.which-key' },
+
+  -- A pretty list for showing diagnostics, references, telescope results,
+  -- quickfix and location lists to help you solve
+  -- all the trouble your code is causing.
+  -- { import = 'user.plugins.trouble' },
+
+  -- A telescope.nvim extension that offers intelligent prioritization
+  -- when selecting files from your editing history
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require("telescope").load_extension "frecency"
+    end,
+  },
+
+  -- Markdown preview
+  { import = 'user.plugins.markdown'}
 }, {
   checker = {
     enabled = true,
