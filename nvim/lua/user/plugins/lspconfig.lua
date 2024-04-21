@@ -146,8 +146,8 @@ return {
     require('user.plugins.config.ls_emmet')
 
     require('lspconfig').html.setup({capabilities = capabilities})
-    require('lspconfig').pyright.setup({})
-    require('lspconfig').tsserver.setup({})
+    require('lspconfig').pyright.setup({capabilities = capabilities})
+    require('lspconfig').tsserver.setup({capabilities = capabilities})
 
     -- Keymaps
     vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
