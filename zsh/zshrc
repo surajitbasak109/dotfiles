@@ -123,10 +123,6 @@ nah() {
 alias d="docker"
 alias dc="docker compose"
 
-open() {
-    xdg-open $* > /dev/null 2>&1
-}
-
 composer-link() {
     composer config minimum-stability dev
     local package=`echo $1 | sed -nr 's/.*\/([^\/]+)$/\1/p'`
@@ -171,6 +167,20 @@ prcheck() {
     gh pr checkout "$1" && gh pr diff
 }
 
+_redis_get_by_pattern() {
+     pattern=$1
+     _redis_ssh cluster nodes | grep master | cut -d' ' -f 2 | cut -d':' -f 1 | xargs -I{} bash -c "redis-cli -c -h {} KEYS $pattern"
+}
+
+_redis_clear_by_pattern() {
+    pattern=$1
+    _redis_ssh cluster nodes | grep master | cut -d' ' -f 2 | cut -d':' -f 1 | xargs -I{} bash -c "redis-cli -c -h {} KEYS $pattern | xargs -I% redis-cli -c -h {} DEL % &"
+}
+
+open() {
+    xdg-open $* > /dev/null 2>&1
+}
+
 alias myip=ip-internal
 alias yt='yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3'
 alias ytv='yt-dlp --merge-output-format mp4 -f "bestvideo+bestaudio[ext=m4a]/best" --embed-thumbnail --add-metadata'
@@ -182,11 +192,12 @@ alias open=xdg-open
 
 alias docker_perm='sudo chmod 777 /var/run/docker.sock'
 alias docker_restart='sudo service docker restart'
-
+alias _redis_ssh='redis-cli -c -h packt-cache-redis-development.qyymth.clustercfg.euw1.cache.amazonaws.com'
 
 vf() { fzf | xargs -r -I % $EDITOR % ;}
 gadd() { git status -s | fzf -m | awk '{print $2}' | xargs git add && git status -s}
 greset() { git status -s |  fzf -m | awk '{print $2}' |xargs git reset && git status -s}
+
 #--------------------------------------------------------------------------
 # Miscellaneous
 #--------------------------------------------------------------------------

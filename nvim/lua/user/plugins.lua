@@ -153,9 +153,17 @@ require("lazy").setup({
       require("telescope").load_extension "frecency"
     end,
   },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts)
+      require 'lsp_signature'.setup(opts)
+    end
+  },
 
   -- Markdown preview
-  { import = 'user.plugins.markdown'}
+  { import = 'user.plugins.markdown' }
 }, {
   checker = {
     enabled = true,
