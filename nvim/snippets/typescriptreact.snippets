@@ -11,12 +11,12 @@ snippet rfc "React functional component" b
   export default  `expand('%:t:r')`;
 
 snippet rfcp "React functional component with props" b
-  type props = {
-    $1
-  }
+    type props = {
+      $1
+    }
 
-  const ${2:`expand('%:t:r')`} = ({$3}: props) => {
-    $4
-  }
+    const ${2:`expand('%:t:r')`} = ({$3}: props) => {
+      $4
+    }
 
-  export default ${5:`expand('%:t:r')`};
+    export default ${5:`expand('%:t:r')`};

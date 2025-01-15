@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Color scheme
   { import = 'user.plugins.tokyonight' },
+  { 'echasnovski/mini.nvim', version = false },
 
   -- Commenting support.
   { import = 'user.plugins.vim-commentary' },
@@ -114,7 +115,7 @@ require("lazy").setup({
   { import = 'user.plugins.cmp' },
 
   -- PHP Refactoring Tools
-  { import = 'user.plugins.phpactor' },
+  -- { import = 'user.plugins.phpactor' },
 
   -- Project Configuration.
   { import = 'user.plugins.projectionist' },
